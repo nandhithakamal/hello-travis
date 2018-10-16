@@ -1,6 +1,12 @@
 language: python
 python:
     - "2.7"
-install:
-    - pip install -r requirements.txt
+install: pip install -r requirements.txt
 script: python tests.py
+jobs:
+    include:
+        - stage: development
+          script: python dev-script.py
+        - stage: staging
+          script: python staging-script.py
+        - stage: production
