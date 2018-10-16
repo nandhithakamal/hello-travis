@@ -6,7 +6,7 @@ script: python tests.py
 jobs:
     include:
         - stage: development
-          script: python dev-script.py
+          script: ./dev-script.sh
         - stage: staging
-          script: python staging-script.py
+          script: ./staging-script.sh
         - stage: production
