@@ -12,3 +12,4 @@ jobs:
         - stage: staging
           script: bash staging-script.sh
         - stage: production
+          script: ./prod-script.sh
