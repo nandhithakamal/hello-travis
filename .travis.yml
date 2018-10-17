@@ -7,7 +7,8 @@ jobs:
     include:
         - stage: development
           script:
-              -  ./dev-script.sh
+              -  ./dev-script-1.sh
+              -  ./dev-script-2.sh
         - stage: staging
           script: bash staging-script.sh
         - stage: production
