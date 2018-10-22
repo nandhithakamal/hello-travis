@@ -1,15 +1,21 @@
 language: python
 python:
     - "2.7"
+sudo: required
+services:
+    - docker
+before-install:
+    - docker build -t hello-docker .
+    - docker run hello-docker
 install: pip install -r requirements.txt
 script: python tests.py
-jobs:
-    include:
-        - stage: development
-          script:
-              -  ./dev-script-1.sh
-              -  ./dev-script-2.sh
-        - stage: staging
-          script: bash staging-script.sh
-        - stage: production
-          script: ./prod-script.sh
+# jobs:
+#     include:
+#         - stage: development
+#           script:
+#               -  ./dev-script-1.sh
+#               -  ./dev-script-2.sh
+#         - stage: staging
+#           script: bash staging-script.sh
+#         - stage: production
+#           script: ./prod-script.sh
