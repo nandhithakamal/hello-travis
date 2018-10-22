@@ -6,6 +6,7 @@ services:
     - docker
 before-install:
     - docker build -t hello-docker .
+    - docker ps -a
     - docker run hello-docker
 install: pip install -r requirements.txt
 script: python tests.py
