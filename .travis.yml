@@ -5,12 +5,9 @@ sudo: required
 services:
     - docker
 before_install:
-    - echo "hello"
     - docker build -t hello-docker .
-    - docker ps -a
-    - docker run hello-docker
 install: pip install -r requirements.txt
-script: python tests.py
+script: docker run hello-docker
 # jobs:
 #     include:
 #         - stage: development
