@@ -8,6 +8,7 @@ deploy:
   skip_cleanup: true
   github-token: $GITHUB_API_KEY
   keep-history: true
+  script: python hello.py
   on:
     branch: master
 
