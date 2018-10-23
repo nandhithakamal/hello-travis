@@ -4,12 +4,12 @@ python:
 sudo: required
 services:
     - docker
+before-install: echo "hello"
+    # - docker build -t hello-docker .
+    # - docker ps -a
+    # - docker run hello-docker
 install: pip install -r requirements.txt
-script:
-    - echo "hello"
-    - docker build -t hello-docker .
-    - docker ps -a
-    - docker run hello-docker
+script: python tests.py
 # jobs:
 #     include:
 #         - stage: development
