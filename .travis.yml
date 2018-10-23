@@ -5,6 +5,7 @@ sudo: required
 services:
     - docker
 before-install:
+    - echo "hello"
     - docker build -t hello-docker .
     - docker ps -a
     - docker run hello-docker
