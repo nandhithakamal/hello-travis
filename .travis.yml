@@ -1,13 +1,16 @@
 language: python
 python:
     - "2.7"
-sudo: required
-services:
-    - docker
-before_install:
-    - docker build -t hello-docker .
 install: pip install -r requirements.txt
-script: docker run hello-docker
+script: python hello.py
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GITHUB_API_KEY
+  keep-history: true
+  on:
+    branch: master
+
 # jobs:
 #     include:
 #         - stage: development
