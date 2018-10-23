@@ -1,0 +1,23 @@
+language: python
+python:
+    - "2.7"
+install: pip install -r requirements.txt
+script: python tests.py
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GITHUB_API_KEY
+  keep-history: true
+  on:
+    branch: master
+
+# jobs:
+#     include:
+#         - stage: development
+#           script:
+#               -  ./dev-script-1.sh
+#               -  ./dev-script-2.sh
+#         - stage: staging
+#           script: bash staging-script.sh
+#         - stage: production
+#           script: ./prod-script.sh
